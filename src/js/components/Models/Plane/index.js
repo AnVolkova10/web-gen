@@ -1,33 +1,27 @@
-import * as THREE from 'three';
-import React from 'react';
-import { DoubleSide } from 'three';
-import { useLoader } from '@react-three/fiber';
-// import PropTypes from 'prop-types';
 
-const Plane = ({ position, onClick, rotation }) => {
-  const texture = useLoader(THREE.TextureLoader, '/models/plane/wireframe.png');
-  const alpha = useLoader(THREE.TextureLoader, '/models/plane/alpha.jpg');
-  const height = useLoader(THREE.TextureLoader, '/models/plane/height.png');
+import React, { useRef, useEffect } from 'react'
+import * as THREE from 'three'
+import {useLoader } from '@react-three/fiber'
+import { TextureLoader } from 'three/src/loaders/TextureLoader'
+
+
+const Plane = (props) => {
+  const ref = useRef()
 
   return (
-    !!texture && (
-      <mesh onClick={onClick} position={position} rotation={rotation}>
-        <planeBufferGeometry attach='geometry' args={[500, 500]} />
-        <meshStandardMaterial
-          attach='material'
-          color='pink'
-          opacity={0.5}
-          transparent
-          side={DoubleSide}
-          depthTest={true}
-          displacementScale={0.5}
-          map={texture}
-          alphaMap={alpha}
-          displacementMap={height}
-        />
-      </mesh>
-    )
+    <mesh ref={ref} receiveShadow rotation={[-0.5*Math.PI,0,0]} >
+      <planeGeometry args={[50,70,64,64]} />
+      <meshStandardMaterial
+      color={'gray'}
+        depthTest = {true}
+        transparent= {true}
+        side = {THREE.DoubleSide}
+        map = {useLoader(TextureLoader, 'wireframe.png')}
+        displacementMap = {useLoader(TextureLoader, 'height.png')}
+        displacementScale = {.5}
+        alphaMap = {useLoader(TextureLoader, 'alpha.jpg')}
+      />
+    </mesh>
   );
 };
-
 export default Plane;

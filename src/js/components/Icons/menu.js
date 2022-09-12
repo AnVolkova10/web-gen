@@ -12,23 +12,23 @@ export const MenuIcon = (props) => {
       <path
         d='M6.66602 20H33.3327'
         stroke='black'
-        stroke-width='3'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='3'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
       <path
         d='M6.66602 10H33.3327'
         stroke='black'
-        stroke-width='3'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='3'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
       <path
         d='M6.66602 30H33.3327'
         stroke='black'
-        stroke-width='3'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='3'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );

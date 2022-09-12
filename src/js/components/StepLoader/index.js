@@ -28,7 +28,7 @@ const StepLoader = () => {
         key='btnsContainers'
       >
         <ButtonContainer onClick={() => goToStep(1)}>
-          <Icon name='genoshaLogo' width={'550px'} height={'fit-content'} />
+          <Icon name='genoshaLogo' width={'550px'} height={'200px'} />
         </ButtonContainer>
       </FadeInOut>
     </Staggers>
