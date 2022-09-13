@@ -13,6 +13,7 @@ import Totem from '../Models/Totem';
 import Plane from "../Models/Plane";
 import Logo from "../Models/Logo";
 import Room from "../Models/Room";
+import Sticker from "../Models/Sticker";
 
 import { PerspectiveCamera } from 'three';
 
@@ -68,6 +69,7 @@ const Scene = () => {
           <boxGeometry args={[1,1,1]}/>
           <meshBasicMaterial color={'hotpinnk'}/>
         </mesh> */}
+        <Sticker position={[3, 5.912, 3]} rotation={[0,0.5*Math.PI,0]} />
         
       </Suspense>
 
